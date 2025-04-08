@@ -1,37 +1,40 @@
-<!DOCTYPE html>
-<html lang="hr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANT FORCE</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0e0e0e;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      color: #ffcc00;
-    }
-    .button {
-      background-color: #ffcc00;
-      color: black;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .button:hover {
-      background-color: #e6b800;
-    }
-  </style>
-</head>
-<body>
-  <h1>🐜 ANT FORCE</h1>
-  <p>NFT Kolekcija koja ratuje protiv korupcije u Web3.</p>
-  <a href="#" class="button">🚀 Pridruži se Koloniji</a>
-</body>
-</html>
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-[#0e0e0e] text-white font-sans">
+      <header className="text-center py-10 border-b border-yellow-500">
+        <h1 className="text-5xl font-bold text-yellow-400 drop-shadow-md">🐜 ANT FORCE</h1>
+        <p className="mt-2 text-lg text-gray-300 italic">NFT Kolekcija koja ratuje protiv korupcije u Web3</p>
+        <button className="mt-6 px-6 py-2 bg-yellow-500 text-black font-bold rounded-2xl shadow hover:bg-yellow-400 transition">
+          🚀 Pridruži se Koloniji
+        </button>
+      </header>
+
+      <section className="py-16 px-4 text-center max-w-5xl mx-auto">
+        <h2 className="text-3xl font-semibold text-yellow-400 mb-6">🔎 Upoznaj Mrave</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {['Captain', 'Engineer', 'Sniper', 'Medic', 'General', 'Queen'].map((name) => (
+            <div key={name} className="bg-gray-900 rounded-2xl p-4 shadow-xl hover:scale-105 transition">
+              <div className="h-40 bg-gray-800 rounded-xl mb-3 flex items-center justify-center">
+                <span className="text-yellow-300 text-xl">{name} Ant</span>
+              </div>
+              <p className="text-sm text-gray-400">{name === 'Queen' ? '👑 Mythical lider' : 'NFT iz kolekcije ANT FORCE'}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-yellow-500 text-black py-12 px-4 text-center">
+        <h2 className="text-2xl font-bold mb-4">⚔️ Misija Kolonije</h2>
+        <p className="max-w-3xl mx-auto text-lg">
+          Crypto svijet je pod napadom: rug pullovi, scam coinovi i pohlepa. ANT FORCE se bori za transparentnost,
+          zajednicu i decentralizaciju. Vodi ih General Ant, a čuva ih Kraljica. Jesi li spreman/la za rat?
+        </p>
+      </section>
+
+      <footer className="text-center py-6 text-sm text-gray-500 border-t border-gray-700 mt-10">
+        © {new Date().getFullYear()} ANT FORCE. Sva prava zadržana.
+      </footer>
+    </div>
+  );
+}
+
